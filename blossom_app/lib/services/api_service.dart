@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   // Use your local IP address
-static const String baseUrl = 'http://10.208.134.216:8000';
+  static const String baseUrl = 'https://salon-backend-g8mj.onrender.com';
 
   // For Android Emulator (comment this out)
   // static const String baseUrl = 'http://10.0.2.2:8000';

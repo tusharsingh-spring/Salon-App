@@ -1,0 +1,22 @@
+# General
+.DS_Store
+*.log
+*.swp
+
+# Python
+**/venv/
+**/__pycache__/
+*.pyc
+.env
+
+# IDEs
+.idea/
+.vscode/
+
+# Flutter/Dart (Root level ignores)
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
