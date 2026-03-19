@@ -6,12 +6,13 @@ from sqlalchemy.orm import Session
 from typing import List, Optional
 from datetime import date, datetime
 
-# Create database tables (run this once)
-# create_table()  # Uncomment to create tables for first time
-from db import create_table
-create_table()
-print("Tables created successfully!")
 app = FastAPI(title="Mom's Salon Management System")
+
+# ✅ Move DB init to startup event
+@app.on_event("startup")
+def startup():
+    create_table()
+    print("✅ Tables created successfully!")
 
 # Enable CORS
 app.add_middleware(
