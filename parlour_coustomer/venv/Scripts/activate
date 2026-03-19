@@ -35,7 +35,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\TUSHAR\OneDrive\Desktop\parlour_coustomer\venv"
+VIRTUAL_ENV="C:\Users\TUSHAR\OneDrive\Desktop\fron_back_salonApp\parlour_coustomer\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

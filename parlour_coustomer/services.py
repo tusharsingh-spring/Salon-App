@@ -119,6 +119,13 @@ def update_appointment_payment(db: Session, appointment_id: int, payment_status:
         db.refresh(db_appointment)
     return db_appointment
 
+def delete_appointment(db: Session, appointment_id: int):
+    db_appointment = db.query(Appointment).filter(Appointment.id == appointment_id).first()
+    if db_appointment:
+        db.delete(db_appointment)
+        db.commit()
+    return db_appointment
+
 # Analytics Services
 def get_daily_earnings(db: Session, start_date: date, end_date: date):
     results = db.query(

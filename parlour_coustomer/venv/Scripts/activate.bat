@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\TUSHAR\OneDrive\Desktop\parlour_coustomer\venv
+set VIRTUAL_ENV=C:\Users\TUSHAR\OneDrive\Desktop\fron_back_salonApp\parlour_coustomer\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

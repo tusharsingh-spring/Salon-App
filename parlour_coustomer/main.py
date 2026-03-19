@@ -114,6 +114,13 @@ def update_payment(
         raise HTTPException(status_code=404, detail="Appointment not found")
     return db_appointment
 
+@app.delete("/appointments/{appointment_id}")
+def delete_appointment(appointment_id: int, db: Session = Depends(get_db)):
+    db_appointment = services.delete_appointment(db, appointment_id)
+    if db_appointment is None:
+        raise HTTPException(status_code=404, detail="Appointment not found")
+    return {"message": "Appointment deleted successfully"}
+
 # Analytics Routes
 @app.get("/analytics/daily/")
 def get_daily_earnings(
