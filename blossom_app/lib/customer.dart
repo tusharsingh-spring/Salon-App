@@ -332,18 +332,31 @@ class _CustomersPageState extends State<CustomersPage> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16),
-            child: TextField(
-              controller: _searchController,
-              onChanged: _filterCustomers,
-              decoration: InputDecoration(
-                hintText: 'Search customers...',
-                prefixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+            child: Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.pink.withOpacity(0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  )
+                ]
+              ),
+              child: TextField(
+                controller: _searchController,
+                onChanged: _filterCustomers,
+                decoration: InputDecoration(
+                  hintText: 'Search customers...',
+                  prefixIcon: const Icon(Icons.search, color: Color(0xFFE91E63)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(24),
+                    borderSide: BorderSide.none,
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: const EdgeInsets.symmetric(vertical: 0),
                 ),
-                filled: true,
-                fillColor: Colors.grey[100],
               ),
             ),
           ),
@@ -382,27 +395,43 @@ class _CustomersPageState extends State<CustomersPage> {
                   itemCount: _filteredCustomers.length,
                   itemBuilder: (context, index) {
                     final customer = _filteredCustomers[index];
-                    return Card(
-                      margin: const EdgeInsets.only(bottom: 8),
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 12, left: 16, right: 16),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.pink.withOpacity(0.05),
+                            blurRadius: 10,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
                       child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.pink[100],
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                        leading: Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFFCE4EC),
+                            shape: BoxShape.circle,
+                          ),
                           child: Text(
-                            customer['name'][0],
-                            style: const TextStyle(color: Colors.pink),
+                            customer['name'][0].toUpperCase(),
+                            style: const TextStyle(color: Color(0xFFE91E63), fontWeight: FontWeight.bold, fontSize: 18),
                           ),
                         ),
-                        title: Text(customer['name']),
-                        subtitle: Text(customer['phone']),
+                        title: Text(customer['name'], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                        subtitle: Text(customer['phone'], style: TextStyle(color: Colors.grey[600])),
                         trailing: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             IconButton(
-                              icon: const Icon(Icons.edit, color: Colors.blue),
+                              icon: const Icon(Icons.edit_outlined, color: Colors.blueAccent),
                               onPressed: () => _showEditDialog(customer),
                             ),
                             IconButton(
-                              icon: const Icon(Icons.delete, color: Colors.red),
+                              icon: const Icon(Icons.delete_outline, color: Colors.redAccent),
                               onPressed: () => _deleteCustomer(
                                 customer['id'],
                                 customer['name'],

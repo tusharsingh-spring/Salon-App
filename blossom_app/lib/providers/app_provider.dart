@@ -37,9 +37,8 @@ class AppProvider with ChangeNotifier {
     try {
       await _apiService.createCustomer(customerData);
       await fetchCustomers();
-      _errorMessage = '';
     } catch (e) {
-      _errorMessage = e.toString();
+      rethrow;
     } finally {
       _setLoading(false);
     }
@@ -50,9 +49,8 @@ class AppProvider with ChangeNotifier {
     try {
       await _apiService.updateCustomer(id, customerData);
       await fetchCustomers();
-      _errorMessage = '';
     } catch (e) {
-      _errorMessage = e.toString();
+      rethrow;
     } finally {
       _setLoading(false);
     }
@@ -63,9 +61,8 @@ class AppProvider with ChangeNotifier {
     try {
       await _apiService.deleteCustomer(id);
       await fetchCustomers();
-      _errorMessage = '';
     } catch (e) {
-      _errorMessage = e.toString();
+      rethrow;
     } finally {
       _setLoading(false);
     }
@@ -89,9 +86,8 @@ class AppProvider with ChangeNotifier {
     try {
       await _apiService.createService(serviceData);
       await fetchServices();
-      _errorMessage = '';
     } catch (e) {
-      _errorMessage = e.toString();
+      rethrow;
     } finally {
       _setLoading(false);
     }
@@ -102,9 +98,8 @@ class AppProvider with ChangeNotifier {
     try {
       await _apiService.updateService(id, serviceData);
       await fetchServices();
-      _errorMessage = '';
     } catch (e) {
-      _errorMessage = e.toString();
+      rethrow;
     } finally {
       _setLoading(false);
     }
@@ -115,9 +110,8 @@ class AppProvider with ChangeNotifier {
     try {
       await _apiService.deleteService(id);
       await fetchServices();
-      _errorMessage = '';
     } catch (e) {
-      _errorMessage = e.toString();
+      rethrow;
     } finally {
       _setLoading(false);
     }
@@ -141,9 +135,21 @@ class AppProvider with ChangeNotifier {
     try {
       await _apiService.createAppointment(appointmentData);
       await fetchAppointments();
-      _errorMessage = '';
     } catch (e) {
-      _errorMessage = e.toString();
+      rethrow;
+    } finally {
+      _setLoading(false);
+    }
+  }
+
+  Future<void> deleteAppointment(int id) async {
+    _setLoading(true);
+    try {
+      await _apiService.deleteAppointment(id);
+      await fetchAppointments();
+      await fetchDashboardData(); // Refetch analytics since an appointment was deleted
+    } catch (e) {
+      rethrow;
     } finally {
       _setLoading(false);
     }
@@ -154,9 +160,8 @@ class AppProvider with ChangeNotifier {
     try {
       await _apiService.updatePayment(id, paymentStatus, paymentMethod: paymentMethod);
       await fetchAppointments();
-      _errorMessage = '';
     } catch (e) {
-      _errorMessage = e.toString();
+      rethrow;
     } finally {
       _setLoading(false);
     }

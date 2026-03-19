@@ -1,0 +1,50 @@
+Analyzing blossom_app...                                        
+
+   info - Don't invoke 'print' in production code - lib\analytics.dart:57:8 - avoid_print
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:192:38 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:290:38 - deprecated_member_use
+   info - Empty catch block - lib\analytics.dart:315:34 - empty_catches
+   info - Unnecessary use of 'toList' in a spread - lib\analytics.dart:339:22 - unnecessary_to_list_in_spreads
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:366:36 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:396:41 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:426:38 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:459:38 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:528:46 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:534:34 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:559:26 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:575:32 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:592:57 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:608:32 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\analytics.dart:650:26 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\customer.dart:340:40 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\customer.dart:405:48 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\home_page.dart:56:26 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\home_page.dart:71:32 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\home_page.dart:126:40 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\home_page.dart:138:37 - deprecated_member_use
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\main.dart:29:13 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\main.dart:43:38 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - lib\service.dart:80:28 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\service.dart:107:28 - use_build_context_synchronously
+warning - The declaration '_deleteService' isn't referenced - lib\service.dart:119:16 - unused_element
+   info - Don't use 'BuildContext's across async gaps - lib\service.dart:149:28 - use_build_context_synchronously
+warning - The declaration '_showEditDialog' isn't referenced - lib\service.dart:209:8 - unused_element
+warning - The value of the local variable 'price' isn't used - lib\service.dart:295:11 - unused_local_variable
+  error - Expected an identifier - lib\service.dart:339:13 - missing_identifier
+  error - Expected to find ')' - lib\service.dart:339:13 - expected_token
+  error - Expected to find ',' - lib\service.dart:339:13 - expected_token
+  error - Undefined name 'trailing' - lib\service.dart:351:9 - undefined_identifier
+  error - Expected to find ')' - lib\service.dart:351:17 - expected_token
+  error - Expected to find ']' - lib\service.dart:351:17 - expected_token
+  error - Expected to find ')' - lib\service.dart:374:6 - expected_token
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\service.dart:413:40 - deprecated_member_use
+   info - The local variable '_tryParseDate' starts with an underscore - lib\work.dart:45:15 - no_leading_underscores_for_local_identifiers
+   info - Don't use 'BuildContext's across async gaps - lib\work.dart:179:28 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\work.dart:550:57 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\work.dart:553:38 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\work.dart:558:38 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\work.dart:583:38 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\work.dart:611:75 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\work.dart:658:85 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\work.dart:658:118 - deprecated_member_use
+

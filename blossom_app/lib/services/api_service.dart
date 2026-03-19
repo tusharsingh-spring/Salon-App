@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   // Use your local IP address
-  static const String baseUrl = 'http://10.16.11.198:8000';
+static const String baseUrl = 'http://10.208.134.216:8000';
 
   // For Android Emulator (comment this out)
   // static const String baseUrl = 'http://10.0.2.2:8000';
@@ -155,6 +155,18 @@ class ApiService {
     }
   }
 
+  Future<void> deleteAppointment(int id) async {
+    try {
+      final response = await http.delete(
+        Uri.parse('$baseUrl/appointments/$id'),
+        headers: {'Content-Type': 'application/json'},
+      );
+      await _handleResponse(response);
+    } catch (e) {
+      throw Exception('Failed to delete appointment: $e');
+    }
+  }
+
   Future<Map<String, dynamic>> updatePayment(int appointmentId, String paymentStatus, {String? paymentMethod}) async {
     try {
       String url = '$baseUrl/appointments/$appointmentId/payment?payment_status=$paymentStatus';
@@ -197,6 +209,19 @@ class ApiService {
       return result as List<dynamic>;
     } catch (e) {
       throw Exception('Failed to load service popularity: $e');
+    }
+  }
+
+  Future<List<dynamic>> getDailyEarnings(String startDate, String endDate) async {
+    try {
+      final response = await http.get(
+        Uri.parse('$baseUrl/analytics/daily/?start_date=$startDate&end_date=$endDate'),
+        headers: {'Content-Type': 'application/json'},
+      );
+      final result = await _handleResponse(response);
+      return result as List<dynamic>;
+    } catch (e) {
+      throw Exception('Failed to load daily earnings: $e');
     }
   }
 }
