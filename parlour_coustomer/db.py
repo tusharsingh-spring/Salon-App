@@ -1,8 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres@localhost:5432/parlour_customer"
-
+SQLALCHEMY_DATABASE_URL = "postgresql://postgres:06072006%40Tushar@db.yeehgzfygmjvwfiyqzaz.supabase.co:5432/postgres"
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 SessionLocal = sessionmaker(
